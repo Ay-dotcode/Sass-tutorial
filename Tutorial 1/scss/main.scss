@@ -1,0 +1,46 @@
+@import './resets';
+@import './variables';
+
+@function weight($weight-name){
+    @return map-get($font-weight, $weight-name);
+}
+
+@mixin mobile()
+
+main {
+    font-family: $font-family;
+
+    header {
+        display: flex;
+        color: $text-color;
+        justify-content: center;
+        background-color: $primary-color;
+
+        h1 {
+            font-weight: weight(heavy)
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+
+        ul {
+            display: flex;
+
+            li {
+                list-style: none;
+                margin: 1rem;
+            }
+
+            a {
+                color: $link-color;
+                text-decoration: none;
+
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
+}
